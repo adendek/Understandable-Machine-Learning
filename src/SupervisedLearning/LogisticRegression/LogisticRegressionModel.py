@@ -14,5 +14,5 @@ class LogisticRegressionModel:
         self.validator.validate_training(data, target)
         self.weights = self.optimizer.optimize(self.weights, data, target)
 
-    def predict(self, to_predict):
-        return sigmoid(np.dot(self.weights.T,to_predict))
+    def predict(self, X):
+        return sigmoid(np.dot(X,self.weights))

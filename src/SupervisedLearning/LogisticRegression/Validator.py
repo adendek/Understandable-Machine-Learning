@@ -33,9 +33,9 @@ class LogRegValidator:
             raise TargetValueError(np.unique(target).shape[0], self.n_classes)
 
     def __validate_data(self, data):
-        if data.shape[0] != self.n_features:
+        if data.shape[1] != self.n_features:
             raise DataDimError(data.shape[0], self.n_features)
 
     def __check_if_data_and_target_match(self, data, target):
-        if data.shape[1] != target.shape[0]:
-            raise DataTargetMissmatch(data.shape[1], target.shape[0])
+        if data.shape[0] != target.shape[0]:
+            raise DataTargetMissmatch(data.shape[0], target.shape[0])
